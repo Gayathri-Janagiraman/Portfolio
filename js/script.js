@@ -7,11 +7,13 @@
   const mobileMenu = document.getElementById('mobileMenu');
   navToggle.addEventListener('click', () => {
     const open = mobileMenu.classList.toggle('open');
+    navToggle.classList.toggle('active', open); 
     navToggle.setAttribute('aria-expanded', open);
   });
   mobileMenu.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
+      navToggle.classList.remove('active');  
       navToggle.setAttribute('aria-expanded', false);
     });
   });
